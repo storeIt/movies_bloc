@@ -1,5 +1,5 @@
-import 'package:dartz/dartz.dart';
+import '../model/movie_raw.dart';
 
 abstract interface class AppRepository {
-  Right<Object, T> fetchMovies<T>();
+  Future<List<MovieRaw>> fetchMovies();
 }
