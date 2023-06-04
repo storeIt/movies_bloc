@@ -1,23 +1,23 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'movie_raw.g.dart';
+part 'movie_entity.g.dart';
 
 @JsonSerializable()
-class MovieRaw extends Equatable {
+class MovieEntity extends Equatable {
   final String title;
   @JsonKey(name: 'posterurl')
   final String imageUrl;
   @JsonKey(name: 'averageRating')
   final int rating;
 
-  const MovieRaw({
+  const MovieEntity({
     required this.title,
     required this.imageUrl,
     required this.rating,
   });
 
-  factory MovieRaw.fromJson(Map<String, dynamic> json) => _$MovieRawFromJson(json);
+  factory MovieEntity.fromJson(Map<String, dynamic> json) => _$MovieEntityFromJson(json);
 
   @override
   List<Object?> get props => [title, imageUrl, rating];
