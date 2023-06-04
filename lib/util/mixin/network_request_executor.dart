@@ -3,18 +3,17 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 
-import '../../base/bloc/base_bloc.dart';
 import '../../data/data_provider.dart';
 import '../../feature/app/bloc/app_bloc.dart';
 import '../../util/helper/logger_helper.dart';
 import '../service/service_locator.dart';
 
-mixin RequestExecutor on Bloc {
+mixin RequestExecutor on BlocBase {
   final DataProvider dataProvider = DataProvider();
   final LoggerHelper logger = locator<LoggerHelper>();
 
   void executeRequest<T>({
-    required BaseBloc bloc,
+    required AppBloc bloc,
     required Future<T> request,
     required Function success,
   }) async {
