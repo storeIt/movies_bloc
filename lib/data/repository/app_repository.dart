@@ -1,5 +1,5 @@
-import '../model/movie_raw.dart';
+import '../model/movie_entity.dart';
 
 abstract interface class AppRepository {
-  Future<List<MovieRaw>> fetchMovies();
+  Future<List<MovieEntity>> fetchMovies();
 }
